@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import styled from 'tachyons-components'
+import StatComp from './components/stats'
+import Quote from './components/quote'
 
+const Background = styled('div')`
+ph7 pv6`
+
+const Dashy = styled('div')`
+
+`
 class App extends Component {
+
+  state = {
+    header1 : "Nadine",
+    header2 : "Kathryn",
+    numba1 : "12231",
+    numba2 : "9234"
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Background>
+        <Quote />
+        <StatComp a={this.state.header1} b={this.state.numba1} />
+        <StatComp a={this.state.header2} b={this.state.numba2} />
+      </ Background>
     );
   }
 }
